@@ -1,7 +1,0 @@
-[build]
-  base = "supporter"
-  publish = "."
-  command = ""
-
-[functions]
-  directory = "netlify/functions"
