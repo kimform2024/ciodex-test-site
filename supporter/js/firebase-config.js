@@ -1,7 +1,7 @@
 const firebaseConfig = {
     apiKey: "YOUR_API_KEY",
     authDomain: "your-project.firebaseapp.com",
-    databaseURL: "https://your-project-default-rtdb.firebaseio.com/",
+    databaseURL: "https://busan-supporters-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "your-project-id",
     storageBucket: "your-project.appspot.com",
     messagingSenderId: "123456789",
