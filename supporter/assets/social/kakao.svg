@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">KakaoTalk</title>
+  <rect width="64" height="64" rx="18" fill="#fee500"/>
+  <path d="M32 15.5c-10.2 0-18.5 6.5-18.5 14.6 0 5.2 3.5 9.8 8.7 12.4l-1.7 6.2c-.2.8.7 1.4 1.4.9l7.1-4.7c1 .1 2 .2 3 .2 10.2 0 18.5-6.5 18.5-14.6S42.2 15.5 32 15.5Z" fill="#371d1e"/>
+  <path d="M22.8 28.2h-2.3v-2h6.9v2h-2.3v7.1h-2.3v-7.1Zm8-2h2.6l3.4 9.1h-2.5l-.6-1.8h-3.2l-.6 1.8h-2.5l3.4-9.1Zm2.3 5.4-.9-2.8h-.1l-.9 2.8h1.9Zm5.3-5.4h2.3v7.1h3.8v2h-6.1v-9.1Z" fill="#fee500"/>
+</svg>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부산의 다음 변화를 함께 만드는 서포터즈</title>
+    
+    <!-- OG Tags for Social Sharing -->
+    <meta property="og:title" content="부산의 다음 변화를 함께 만드는 서포터즈">
+    <meta property="og:description" content="지역의 목소리를 모아 더 넓은 부산을 준비합니다. 지금 참여해 주세요.">
+    <meta property="og:image" content="https://your-domain.netlify.app/og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.netlify.app">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="부산의 다음 변화를 함께 만드는 서포터즈">
+    <meta name="twitter:description" content="지역의 목소리를 모아 더 넓은 부산을 준비합니다. 지금 참여해 주세요.">
+    <meta name="twitter:image" content="https://your-domain.netlify.app/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🏛️</text></svg>">
+    
+    <!-- Tabler Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons-sprite.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/tabler-icons.min.css">
+    
+    <style>
+        :root {
+            --color-background-primary: #ffffff;
+            --color-background-secondary: #f8fafc;
+            --color-text-primary: #1e293b;
+            --color-text-secondary: #64748b;
+            --color-text-tertiary: #94a3b8;
+            --color-border-tertiary: rgba(148, 163, 184, 0.15);
+            --color-border-secondary: rgba(148, 163, 184, 0.3);
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+            --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-sans); background: var(--color-background-secondary); }
+        .container { max-width: 680px; margin: 0 auto; padding: 1rem; }
+        
+        .hero { 
+            background: url('data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCALYA4YDASIAAhEBAxEB/8QAHQABAAAHAQEAAAAAAAAAAAAAAAIDBAUGBwgBCf/EAGYQAAEDAgQCBQUGDzoKCAYBBQECAAMEEQUGEiExQQcTIlFhCBQycYEVI0RSkaEWFzdUYnJ1kpSjsbPB0dIYJDY4Q2RzicsLD4TxJidERWWERqTiCbTy') no-repeat center/cover; 
+            position: relative; 
+            border-radius: var(--border-radius-lg); 
+            padding: 2.5rem 2rem 2rem; 
+            text-align: center; 
+            overflow: hidden; 
+            margin-bottom: 1.5rem; 
+        }
+        .hero::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; left: 0; right: 0; bottom: 0; 
+            background: linear-gradient(135deg, rgba(185, 28, 28, 0.85) 0%, rgba(220, 38, 38, 0.75) 60%, rgba(248, 113, 113, 0.65) 100%); 
+            border-radius: var(--border-radius-lg); 
+        }
+        .hero-content { position: relative; z-index: 2; }
+        .badge-party { 
+            display: inline-block; 
+            background: rgba(255,255,255,0.25); 
+            color: #fff; 
+            font-size: 12px; 
+            padding: 4px 16px; 
+            border-radius: 20px; 
+            border: 1px solid rgba(255,255,255,0.4); 
+            margin-bottom: 1rem; 
+            letter-spacing: 0.5px; 
+            backdrop-filter: blur(4px); 
+        }
+        .hero h1 { 
+            color: #fff; 
+            font-size: 20px; 
+            font-weight: 500; 
+            line-height: 1.4; 
+            margin-bottom: 0.5rem; 
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3); 
+        }
+        .hero .sub { 
+            color: rgba(255,255,255,0.9); 
+            font-size: 13px; 
+            margin-bottom: 1.5rem; 
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2); 
+        }
+        .counter-box { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 12px; 
+            background: rgba(255,255,255,0.2); 
+            border: 1px solid rgba(255,255,255,0.3); 
+            border-radius: var(--border-radius-lg); 
+            padding: 0.8rem 1.5rem; 
+            backdrop-filter: blur(6px); 
+        }
+        .counter-num { 
+            color: #fff; 
+            font-size: 30px; 
+            font-weight: 500; 
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3); 
+        }
+        .counter-label { 
+            color: rgba(255,255,255,0.9); 
+            font-size: 13px; 
+            line-height: 1.5; 
+            text-align: left; 
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2); 
+        }
+        .section-card { 
+            background: var(--color-background-primary); 
+            border: 0.5px solid var(--color-border-tertiary); 
+            border-radius: var(--border-radius-lg); 
+            padding: 1.5rem; 
+            margin-bottom: 1.5rem; 
+        }
+        .section-title { 
+            font-size: 15px; 
+            font-weight: 500; 
+            color: var(--color-text-primary); 
+            margin-bottom: 1.1rem; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+        }
+        .region-tags { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 8px; 
+            margin-bottom: 1.25rem; 
+        }
+        .tag { 
+            padding: 6px 13px; 
+            border-radius: 20px; 
+            font-size: 13px; 
+            cursor: pointer; 
+            border: 0.5px solid var(--color-border-secondary); 
+            color: var(--color-text-secondary); 
+            background: var(--color-background-primary); 
+            transition: all 0.15s; 
+        }
+        .tag.active { 
+            background: #FEE2E2; 
+            border-color: #DC2626; 
+            color: #991B1B; 
+            font-weight: 500; 
+        }
+        .form-row { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 12px; 
+            margin-bottom: 12px; 
+        }
+        .form-group { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 6px; 
+            margin-bottom: 12px; 
+        }
+        .form-group label { 
+            font-size: 13px; 
+            color: var(--color-text-secondary); 
+        }
+        .form-group input, .form-group textarea { 
+            font-family: var(--font-sans); 
+            font-size: 14px; 
+            padding: 10px;
+            border: 1px solid var(--color-border-secondary);
+            border-radius: 6px;
+        }
+        .form-group textarea { 
+            resize: vertical; 
+            min-height: 70px; 
+        }
+        .required { 
+            color: #DC2626; 
+            margin-left: 2px; 
+        }
+        .privacy-box {
+            background: var(--color-background-secondary);
+            border: 1px solid var(--color-border-tertiary);
+            border-radius: var(--border-radius-md);
+            padding: 0.85rem;
+            margin-bottom: 12px;
+        }
+        .privacy-box label {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: var(--color-text-primary);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .privacy-box input {
+            margin-top: 3px;
+        }
+        .privacy-note {
+            color: var(--color-text-secondary);
+            font-size: 12px;
+            line-height: 1.5;
+            margin-top: 6px;
+            padding-left: 22px;
+        }
+        .hidden-field {
+            display: none;
+        }
+        .btn-join { 
+            width: 100%; 
+            padding: 0.9rem; 
+            background: #B91C1C; 
+            color: #fff; 
+            border: none; 
+            border-radius: var(--border-radius-md); 
+            font-size: 15px; 
+            font-weight: 500; 
+            cursor: pointer; 
+            font-family: var(--font-sans); 
+            transition: background 0.15s; 
+        }
+        .btn-join:hover { 
+            background: #991B1B; 
+        }
+        .btn-join:active { 
+            transform: scale(0.99); 
+        }
+        .feed { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 10px; 
+            max-height: 320px; 
+            overflow-y: auto; 
+        }
+        .feed-item { 
+            background: var(--color-background-secondary); 
+            border-radius: var(--border-radius-md); 
+            padding: 0.9rem 1rem; 
+            display: flex; 
+            gap: 10px; 
+            align-items: flex-start; 
+        }
+        .avatar { 
+            width: 36px; 
+            height: 36px; 
+            border-radius: 50%; 
+            background: #FEE2E2; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 13px; 
+            font-weight: 500; 
+            color: #991B1B; 
+            flex-shrink: 0; 
+        }
+        .feed-name { 
+            font-size: 14px; 
+            font-weight: 500; 
+            color: var(--color-text-primary); 
+        }
+        .feed-region { 
+            font-size: 12px; 
+            color: var(--color-text-secondary); 
+            margin-left: 6px; 
+        }
+        .feed-msg { 
+            font-size: 13px; 
+            color: var(--color-text-secondary); 
+            margin-top: 3px; 
+            line-height: 1.5; 
+        }
+        .feed-time { 
+            font-size: 11px; 
+            color: var(--color-text-tertiary); 
+            margin-top: 4px; 
+        }
+        .share-grid { 
+            display: grid; 
+            grid-template-columns: repeat(5, 1fr); 
+            gap: 8px; 
+        }
+        .share-btn { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 6px; 
+            padding: 0.8rem 0.3rem; 
+            border-radius: var(--border-radius-md); 
+            border: 0.5px solid var(--color-border-tertiary); 
+            background: var(--color-background-primary); 
+            cursor: pointer; 
+            font-size: 11px; 
+            color: var(--color-text-secondary); 
+            font-family: var(--font-sans); 
+            transition: background 0.15s; 
+            text-decoration: none; 
+        }
+        .share-btn:hover { 
+            background: var(--color-background-secondary); 
+            text-decoration: none; 
+            color: var(--color-text-secondary); 
+        }
+        .share-icon { 
+            width: 36px; 
+            height: 36px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 17px; 
+        }
+        .share-icon img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: inherit;
+        }
+        .s-yt { background: #FF0000; color: #fff; }
+        .s-kk { background: #FEE500; color: #3A1D1D; }
+        .s-ig { background: #E1306C; color: #fff; }
+        .s-fb { background: #1877F2; color: #fff; }
+        .s-cp { background: #FEE2E2; color: #B91C1C; }
+        .toast { 
+            display: none; 
+            position: fixed; 
+            bottom: 1.5rem; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            background: #991B1B; 
+            color: #fff; 
+            padding: 0.65rem 1.4rem; 
+            border-radius: 20px; 
+            font-size: 13px; 
+            z-index: 99; 
+            white-space: nowrap; 
+        }
+        .toast.show { 
+            display: block; 
+            animation: fadeup 0.3s ease; 
+        }
+        @keyframes fadeup { 
+            from { 
+                opacity: 0; 
+                transform: translateX(-50%) translateY(10px); 
+            } 
+            to { 
+                opacity: 1; 
+                transform: translateX(-50%) translateY(0); 
+            } 
+        }
+        .new-badge { 
+            display: inline-block; 
+            background: #FEE2E2; 
+            color: #B91C1C; 
+            font-size: 11px; 
+            padding: 2px 8px; 
+            border-radius: 10px; 
+            margin-left: 6px; 
+        }
+        body {
+            background:
+                radial-gradient(circle at 12% 0%, rgba(185, 28, 28, 0.12), transparent 28rem),
+                linear-gradient(180deg, #ffffff 0%, #f6f7fb 42%, #f8fafc 100%);
+            color: #151923;
+        }
+        .container {
+            max-width: 760px;
+            padding: 1.25rem;
+        }
+        .hero {
+            background:
+                linear-gradient(135deg, rgba(127, 29, 29, 0.94), rgba(185, 28, 28, 0.86)),
+                linear-gradient(45deg, #111827, #b91c1c);
+            min-height: 360px;
+            display: grid;
+            align-items: end;
+            text-align: left;
+            padding: 2rem;
+            border-radius: 18px;
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.11);
+        }
+        .hero::before {
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px),
+                linear-gradient(180deg, rgba(255,255,255,0.12) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: linear-gradient(180deg, rgba(0,0,0,0.92), transparent);
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: -6rem;
+            top: -7rem;
+            width: 18rem;
+            height: 18rem;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 999px;
+        }
+        .hero-content {
+            max-width: 620px;
+        }
+        .badge-party {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            background: rgba(255,255,255,0.14);
+            border-color: rgba(255,255,255,0.24);
+            backdrop-filter: blur(10px);
+        }
+        .hero h1 {
+            font-size: clamp(32px, 8vw, 54px);
+            font-weight: 750;
+            line-height: 1.05;
+            letter-spacing: 0;
+            margin-bottom: 1rem;
+            text-shadow: 0 18px 34px rgba(0,0,0,0.26);
+        }
+        .hero .sub {
+            max-width: 34rem;
+            font-size: 16px;
+            line-height: 1.65;
+            color: rgba(255,255,255,0.86);
+            text-shadow: none;
+        }
+        .counter-box {
+            width: min(100%, 420px);
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            background: rgba(255,255,255,0.13);
+            border-color: rgba(255,255,255,0.22);
+            padding: 1rem 1.15rem;
+            backdrop-filter: blur(12px);
+        }
+        .counter-num {
+            font-size: 34px;
+            font-weight: 750;
+            line-height: 1;
+            text-shadow: none;
+        }
+        .counter-label {
+            text-align: right;
+            text-shadow: none;
+        }
+        .section-card {
+            border: 1px solid rgba(20, 28, 42, 0.08);
+            border-radius: 18px;
+            box-shadow: 0 10px 32px rgba(15, 23, 42, 0.06);
+        }
+        .section-title {
+            font-weight: 700;
+            color: #151923;
+        }
+        .tag {
+            border: 1px solid rgba(20, 28, 42, 0.14);
+            padding: 7px 13px;
+        }
+        .tag.active {
+            background: #fff1f2;
+            border-color: rgba(185, 28, 28, 0.42);
+            color: #7f1d1d;
+            font-weight: 650;
+            box-shadow: 0 8px 18px rgba(185, 28, 28, 0.12);
+        }
+        .form-group input,
+        .form-group textarea {
+            padding: 12px 13px;
+            border-radius: 10px;
+            background: #fbfcfe;
+            color: #151923;
+            transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgba(185, 28, 28, 0.52);
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(185, 28, 28, 0.08);
+        }
+        .btn-join {
+            padding: 1rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #7f1d1d, #b91c1c);
+            font-weight: 700;
+            box-shadow: 0 14px 28px rgba(185, 28, 28, 0.22);
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .btn-join:hover {
+            background: linear-gradient(135deg, #7f1d1d, #b91c1c);
+            transform: translateY(-1px);
+            box-shadow: 0 18px 34px rgba(185, 28, 28, 0.27);
+        }
+        @media (max-width: 640px) {
+            .container {
+                padding: 0.85rem;
+            }
+            .hero {
+                min-height: 420px;
+                padding: 1.4rem;
+            }
+            .hero .sub {
+                font-size: 14px;
+            }
+            .counter-box {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+            .counter-label {
+                text-align: left;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        .hero {
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            align-items: center;
+            min-height: auto;
+            padding: 1rem;
+        }
+        .hero-content {
+            align-self: auto;
+            max-width: none;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+            gap: 1rem;
+            align-items: center;
+        }
+        .hero-content h1 {
+            grid-column: 1 / -1;
+            max-width: 100%;
+            white-space: nowrap;
+            font-size: clamp(24px, 3.8vw, 38px);
+        }
+        .hero-content .sub {
+            margin-bottom: 0;
+        }
+        .hero-content .counter-box {
+            flex-shrink: 0;
+        }
+        .hero-visual {
+            position: relative;
+            z-index: 2;
+            align-self: stretch;
+            min-height: auto;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 22px 44px rgba(0, 0, 0, 0.2);
+            padding: 0.45rem;
+            order: -1;
+        }
+        .hero-photo {
+            width: 100%;
+            height: auto;
+            max-height: none;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 12px;
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        .campaign-poster {
+            display: none;
+        }
+        .campaign-poster img {
+            width: 100%;
+            display: block;
+        }
+        @media (max-width: 720px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+                min-height: auto;
+            }
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            .hero-visual {
+                order: -1;
+                min-height: auto;
+            }
+        }
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 20px;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>지금, 우리 동네의 응원을 더해 주세요!</h1>
+                <p class="sub">아래 신청 현황을 확인하고 서포터즈 참여를 이어가세요.</p>
+                <div class="counter-box">
+                    <span class="counter-num" id="counter">25,000</span>
+                    <span class="counter-label">명의 부산 시민이<br>함께 참여 중입니다</span>
+                </div>
+            </div>
+            <div class="hero-visual" aria-label="서포터즈 캠페인 이미지">
+                <img class="hero-photo" src="image/main.png" alt="부산의 다음 변화를 함께 만드는 서포터즈 캠페인" />
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">지역 선택</div>
+            <div class="region-tags" id="region-tags">
+                <span class="tag" data-r="강서구">강서구</span>
+                <span class="tag" data-r="금정구">금정구</span>
+                <span class="tag" data-r="기장군">기장군</span>
+                <span class="tag" data-r="남구">남구</span>
+                <span class="tag" data-r="동구">동구</span>
+                <span class="tag" data-r="동래구">동래구</span>
+                <span class="tag" data-r="부산진구">부산진구</span>
+                <span class="tag" data-r="북구">북구</span>
+                <span class="tag" data-r="사상구">사상구</span>
+                <span class="tag" data-r="사하구">사하구</span>
+                <span class="tag" data-r="서구">서구</span>
+                <span class="tag" data-r="수영구">수영구</span>
+                <span class="tag" data-r="연제구">연제구</span>
+                <span class="tag" data-r="영도구">영도구</span>
+                <span class="tag active" data-r="해운대구">해운대구</span>
+                <span class="tag" data-r="기타">기타</span>
+            </div>
+
+            <div class="section-title">서포터즈 신청</div>
+            <form name="supporters" id="supporters-form" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="supporters" />
+                <p class="hidden-field">
+                    <label>비워두세요: <input name="bot-field" /></label>
+                </p>
+                <div class="form-row">
+                    <div class="form-group" style="margin-bottom:0;">
+                        <label>이름<span class="required">*</span></label>
+                        <input type="text" name="name" id="inp-name" placeholder="홍길동" required />
+                    </div>
+                    <div class="form-group" style="margin-bottom:0;">
+                        <label>연락처<span class="required">*</span></label>
+                        <input type="tel" name="phone" id="inp-phone" placeholder="010-0000-0000" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>응원 메시지<span class="required">*</span></label>
+                    <textarea name="message" id="inp-msg" placeholder="박형준 시장님을 응원하는 메시지를 자유롭게 써주세요 :)" required></textarea>
+                </div>
+                <div class="privacy-box">
+                    <label>
+                        <input type="checkbox" name="privacyConsent" id="privacy-consent" value="true" required />
+                        개인정보 수집 및 이용에 동의합니다.<span class="required">*</span>
+                    </label>
+                    <div class="privacy-note">
+                        수집 항목: 이름, 연락처, 지역, 응원 메시지. 이용 목적: 서포터즈 신청 확인 및 캠페인 안내. 보관 기간: 캠페인 종료 후 30일 이내 삭제.
+                    </div>
+                </div>
+                <input type="hidden" name="region" id="inp-region" value="해운대구" />
+                <input type="hidden" name="timestamp" id="inp-timestamp" />
+                <button type="submit" class="btn-join">
+                    서포터즈 참여하기
+                </button>
+            </form>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">
+                💬 시민 응원 메시지
+                <span class="new-badge">실시간</span>
+            </div>
+            <div class="feed" id="feed">
+                <div class="feed-item">
+                    <div class="avatar">김</div>
+                    <div>
+                        <div><span class="feed-name">김부산</span><span class="feed-region">해운대구</span></div>
+                        <div class="feed-msg">부산이 세계도시로 도약하길 기대합니다. 박형준 시장님 힘내세요!</div>
+                        <div class="feed-time">방금 전</div>
+                    </div>
+                </div>
+                <div class="feed-item">
+                    <div class="avatar">이</div>
+                    <div>
+                        <div><span class="feed-name">이사하</span><span class="feed-region">사하구</span></div>
+                        <div class="feed-msg">부산 경제 살리고, 글로벌 도시 만들어주실 분은 박형준 시장님입니다!</div>
+                        <div class="feed-time">5분 전</div>
+                    </div>
+                </div>
+                <div class="feed-item">
+                    <div class="avatar">박</div>
+                    <div>
+                        <div><span class="feed-name">박동래</span><span class="feed-region">동래구</span></div>
+                        <div class="feed-msg">아이들이 살기 좋은 세계적인 부산을 만들어 주세요. 응원합니다!</div>
+                        <div class="feed-time">12분 전</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">📱 박형준 후보와 소통하기</div>
+            <div class="share-grid">
+                <a href="https://www.youtube.com/@park.heong.joonTV" target="_blank" class="share-btn">
+                    <span class="share-icon">
+                        <img src="assets/social/youtube.svg" alt="YouTube" />
+                    </span>
+                    유튜브
+                </a>
+                <a href="https://invite.kakao.com/tc/vd1Ulwo3Mk" target="_blank" class="share-btn">
+                    <span class="share-icon">
+                        <img src="assets/social/kakao.svg" alt="KakaoTalk" />
+                    </span>
+                    카카오톡
+                </a>
+                <a href="https://www.instagram.com/park_heong_joon/" target="_blank" class="share-btn">
+                    <span class="share-icon">
+                        <img src="assets/social/instagram.svg" alt="Instagram" />
+                    </span>
+                    인스타그램
+                </a>
+                <a href="https://www.facebook.com/parkhjun" target="_blank" class="share-btn">
+                    <span class="share-icon">
+                        <img src="assets/social/facebook.svg" alt="Facebook" />
+                    </span>
+                    페이스북
+                </a>
+                <button class="share-btn" id="copy-link-btn" type="button">
+                    <span class="share-icon s-cp">🔗</span>
+                    링크 공유
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

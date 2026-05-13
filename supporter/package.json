@@ -1,0 +1,12 @@
+{
+  "name": "park-supporters-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static supporters app with Netlify Functions and Firebase Realtime Database",
+  "scripts": {
+    "check": "node --check js/main.js && node --check js/admin.js && node --check js/firebase-config.js && node --check netlify/functions/submit-supporter.js && node --check netlify/functions/admin-data.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0"
+  }
+}
