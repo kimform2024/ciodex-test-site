@@ -1,0 +1,4 @@
+[build]
+  base = "supporter"
+  publish = "."
+  functions = "netlify/functions"
